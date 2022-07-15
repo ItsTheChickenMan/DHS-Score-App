@@ -1,0 +1,2 @@
+[[{"scores":[122,110],"participant":"175604936"},{"scores":[56,92],"participant":"175604933"}],[{"scores":[64,104,128],"participant":"175604931"},{"scores":[102,96,92],"participant":"175606772"}],[{"score":86,"participant":"175604933"},{"score":68,"participant":"175606772"}],[{"scores":[104,104,110],"participant":"175604936"},{"scores":[114,76,64],"participant":"175604931"}]]
+true

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score App</title>
+
+		<!-- stylesheets -->
+		<link rel="stylesheet" href="/static/style/menubar/menubar.css">
+  </head>
+  <body>
+    <p id="status-p">Waiting for credentials...</p>
+
+		<script src="/static/scripts/menubar/menubar.js"></script>
+		
+		<script src="/static/scripts/score.js"></script>
+    <script src="/static/scripts/auth.js"></script>
+		<script src="/static/scripts/api.js"></script>
+    <script src="/static/scripts/main.js"></script>
+
+		<script>
+			// utility
+			async function giveEveryoneRandomScores(low=1, high=120, delay=0){
+				let range = high-low;
+				
+				for(let i = 1; i <= tourneyMatches.length; i++){
+					if(tourneyMatches[i-1].state != "open") continue;
+					
+					updateMatchScoresGroupStage(i, Math.round(Math.random()*range)+low, 0);
+					updateMatchScoresGroupStage(i, Math.round(Math.random()*range)+low, 1);
+
+					if(delay) await new Promise((res, cat) => {setTimeout(() => {}, delay)});
+				}
+			}
+		</script>
+  </body>
+</html>

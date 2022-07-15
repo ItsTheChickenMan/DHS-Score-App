@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logging in...</title>
+  </head>
+  <body>
+    <p id="status">Logging in, please wait...</p>
+
+    <!-- ping the site for creds -->
+    <script>
+      let credsUrl = "/creds";
+      let rate = 500;
+			let totalWaitTime = 0;
+			let maxTotalWaitTime = 15000;
+			
+      function askForCreds(){
+        fetch(credsUrl)
+        .then(res => res.json())
+        .then(creds => {
+          if(!creds || !creds.access_token){
+						if(totalWaitTime >= maxTotalWaitTime){
+							document.getElementById("status").textContent = "There's probably some kind of error, go get Phoenix and ask him to fix it";
+							return;
+						}
+						
+            window.setTimeout(() => {
+							totalWaitTime += rate;
+							askForCreds();
+            }, rate);
+          } else {
+            window.open("/", "_top");
+          }
+        })
+        .catch(console.error);
+      }
+
+      askForCreds();
+    </script>
+  </body>
+</html>
