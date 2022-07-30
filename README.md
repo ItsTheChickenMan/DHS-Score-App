@@ -4,6 +4,8 @@ Scoring app used for the (second session of the) Coastal Cleanup outreach event 
 
 This was used to keep track of team scores and upload them to the bracket created in Challonge.  It worked with only one technical difficulty on competition day (which was repl related), so overall I'd say it was a success.
 
+This is mainly an archive, and isn't meant to be used.  The code may or may not be used again next season.
+
 # Notes/Thoughts
 
 Here's a couple of takeaways from this project, in no particular order:
